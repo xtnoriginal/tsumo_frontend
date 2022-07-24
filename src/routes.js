@@ -21,6 +21,8 @@ export default function Router() {
       element: <WebsiteLayout />,
       children: [
         { path: '', element: <DashboardApp /> },
+        { path: '/', element: <Navigate to="home" /> },
+        { path: 'home', element: <DashboardApp /> },
         { path: 'about', element: <User /> },
         { path: 'team', element: <Products /> },
         { path: 'blog', element: <Blog /> },

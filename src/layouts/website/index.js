@@ -2,6 +2,8 @@
 import {styled} from "@mui/material/styles";
 //import {useState} from "@types/react";
 import {Outlet} from "react-router-dom";
+import WebsiteNavbar from "./WebsiteNavbar";
+import {useState} from "react";
 
 const APP_BAR_MOBILE = 64;
 const APP_BAR_DESKTOP = 92;
@@ -28,10 +30,12 @@ const MainStyle = styled('div')(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function WebsiteLayout() {
-    //const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false);
 
     return (
         <RootStyle>
+
+            <WebsiteNavbar onOpenSidebar={() => setOpen(true)}/>
             <MainStyle>
                 <Outlet />
             </MainStyle>
